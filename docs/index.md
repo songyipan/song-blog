@@ -14,7 +14,7 @@ hero:
       text: 项目文档
       link: /api-examples
   image:
-    src: './public/login.png.jpg'
+    src: '/public/login.png.jpg'
 
 features:
   - title: 基础
