@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "XIAOSONG"
   text: "NestJS+Vue3全栈开发指南"
-  tagline: 从基础到高级实战
+  tagline: Redis + Docker + Prisma 全栈体系开发。从基础到高级实战
   actions:
     - theme: brand
       text: 课程介绍
@@ -13,6 +13,8 @@ hero:
     - theme: alt
       text: 项目文档
       link: /api-examples
+  image:
+    src: './public/login.png.jpg'
 
 features:
   - title: 基础
