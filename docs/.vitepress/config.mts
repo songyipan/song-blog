@@ -5,6 +5,7 @@ export default defineConfig({
   title: "XIAOSONG的编程世界",
   description: "知识分享",
   base: "/song-blog/",
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
