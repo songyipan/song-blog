@@ -10,21 +10,31 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
-      { text: "资源共享", link: "/markdown-examples" },
+      { text: "资源共享", link: "/res/index" },
     ],
 
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
-    ],
-
-    // socialLinks: [
-    //   { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    // ],
+    sidebar: {
+      "/course/": [
+        {
+          text: "令人心动的NestJS全栈体系课",
+          items: [
+            {
+              text: "为什么学习NestJS全栈",
+              link: "/course/index",
+            },
+            {
+              text: "如何学习NestJS全栈",
+              link: "/course/abouts",
+            },
+          ],
+        },
+      ],
+      "/post/": [
+        {
+          text: "课程知识点",
+          items: [{ text: "RBAC权限控制", link: "/post/RBAC_Auth" }],
+        },
+      ],
+    },
   },
 });

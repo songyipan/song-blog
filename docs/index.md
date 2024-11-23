@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 课程介绍
-      link: /markdown-examples
+      link: /course/index
     - theme: alt
-      text: 项目文档
-      link: /api-examples
+      text: 技术文档
+      link: /post/RBAC_Auth
   image:
     src: '/home-logo.jpg'
 
