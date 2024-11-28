@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "XIAOSONG的编程世界",
+  title: "XIAOSONG的TS全栈",
   description: "知识分享",
   base: "/song-blog/",
 
