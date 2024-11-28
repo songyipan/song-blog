@@ -32,7 +32,16 @@ export default defineConfig({
       "/post/": [
         {
           text: "课程知识点",
-          items: [{ text: "RBAC权限控制", link: "/post/RBAC_Auth" }],
+          items: [
+            {
+              text: "RBAC权限控制",
+              link: "/post/RBAC_Auth",
+            },
+            {
+              text: "vitePress+Github部署博客主页",
+              link: "/post/inGitHub",
+            },
+          ],
         },
       ],
     },
