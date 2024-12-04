@@ -43,6 +43,19 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "Prisma 使用",
+          items: [
+            {
+              text: "Prisma 使用入门",
+              link: "/post/prisma/prisma",
+            },
+            {
+              text: "prisma 自引用",
+              link: "/post/prisma/prisma-self-reference",
+            },
+          ],
+        },
       ],
     },
   },
