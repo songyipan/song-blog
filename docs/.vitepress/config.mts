@@ -10,7 +10,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
-      { text: "资源共享", link: "/res/index" },
+      { text: "NestJS学习", link: "/course/index" },
     ],
 
     sidebar: {
