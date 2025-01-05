@@ -10,7 +10,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
-      { text: "资源共享", link: "/res/index" },
+      { text: "NestJS学习", link: "/course/index" },
     ],
 
     sidebar: {
@@ -40,6 +40,19 @@ export default defineConfig({
             {
               text: "vitePress+Github部署博客主页",
               link: "/post/inGitHub",
+            },
+          ],
+        },
+        {
+          text: "Prisma 使用",
+          items: [
+            {
+              text: "Prisma 使用入门",
+              link: "/post/prisma/prisma",
+            },
+            {
+              text: "prisma 自引用",
+              link: "/post/prisma/prisma-self-reference",
             },
           ],
         },
