@@ -23,7 +23,7 @@ export default defineConfig({
               link: "/course/index",
             },
             {
-              text: "如何学习NestJS全栈",
+              text: "令人心动的课程介绍",
               link: "/course/abouts",
             },
           ],
