@@ -11,10 +11,13 @@ hero:
       text: 课程介绍
       link: /course/index
     - theme: alt
+      text: 组件库开发
+      link: /componentDocs/index
+    - theme: alt
       text: 技术文档
       link: /post/RBAC_Auth
   image:
-    src: '/home-logo.jpg'
+    src: "/home-logo.jpg"
 
 features:
   - title: 基础
@@ -24,4 +27,3 @@ features:
   - title: 项目实战
     details: 第一个项目构建一个云笔记项目，夯实基础知识。第二个项目构建一个社区项目（类似稀土掘金），主要是用来巩固进阶知识点。第三个项目是创建一个社交软件（类似微信），增加简历的项目亮点也是知识点的进阶实战
 ---
-
