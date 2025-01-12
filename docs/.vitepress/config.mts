@@ -11,9 +11,16 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       { text: "NestJS学习", link: "/course/index" },
+      { text: "组件库开发", link: "/componentDocs/index" },
     ],
 
     sidebar: {
+      "/componentDocs/": [
+        {
+          text: "使用monorepo 构建组件库",
+          items: [],
+        },
+      ],
       "/course/": [
         {
           text: "令人心动的NestJS全栈体系课",
