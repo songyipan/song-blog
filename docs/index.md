@@ -8,7 +8,7 @@ hero:
   tagline: Redis + Docker + Prisma 全栈体系开发。从基础到高级实战
   actions:
     - theme: brand
-      text: 课程介绍
+      text: TS全栈体系课
       link: /course/index
     - theme: alt
       text: 组件库开发
