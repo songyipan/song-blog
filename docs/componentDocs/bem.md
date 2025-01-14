@@ -104,7 +104,7 @@ export * from "./useNamespace/useNamespace";
 </script>
 
 <template>
-  <button :class="[ns.block(),  ns.modifier("size", size), ns.modifier("size", "small")]">
+  <button :class="[ns.block(), ns.modifier("size", "small")]">
     <span>
       <slot>button</slot>
     </span>
@@ -112,4 +112,4 @@ export * from "./useNamespace/useNamespace";
 </template>
 ```
 
-统过以上在`:class="[ns.block(),  ns.modifier("size", size),ns.modifier("size", "small")]"` 来使用 BEM 规范,这时候 button 这个按钮就会加上 class，值比如 `x-button--size_small`。后面带大家写样式的时候就会看到效果了。
+统过以上在`:class="[ns.block(),ns.modifier("size", "small")]"` 来使用 BEM 规范,这时候 button 这个按钮就会加上 class，值比如 `x-button--size_small`。后面带大家写样式的时候就会看到效果了。

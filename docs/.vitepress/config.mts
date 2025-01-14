@@ -27,6 +27,10 @@ export default defineConfig({
               text: "BEM规范",
               link: "/componentDocs/bem",
             },
+            {
+              text: "button组件开发",
+              link: "/componentDocs/button",
+            },
           ],
         },
       ],
