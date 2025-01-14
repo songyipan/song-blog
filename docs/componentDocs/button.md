@@ -93,7 +93,7 @@ const ns = useNamespace("button");
 - `ns.block()`：这个就是我们之前在 x-button.scss 中定义的 .x-button 这个类名，就是我们最终要渲染的按钮。
 - `ns.modifier(type)`：这个最终生成的是 .x-button-default 这个类名，就是我们根据不同的 type 来设置不同的样式。如果传递的 type 是 danger，那么最终生成的就是 .x-button-danger 这个类名。
 
-## 在 x-button.scss 添加不同类型的样式
+### 在 x-button.scss 添加不同类型的样式
 
 ```scss
 .x-button {
@@ -161,3 +161,242 @@ const ns = useNamespace("button");
 ```
 
 以上都是 css 基础语法我就不做介绍了，大家可以参考一下。
+
+## 圆角按钮
+
+`:class="[ns.block(), ns.modifier(type),  ns.is('round', round),]"`，这段代码中，`ns.is('round', round)`，round 是一个布尔值，如果 round 为 true，那么就会添加 is-round。然后在 defineProps 中接收 round 这个参数，然后根据这个参数来设置不同的样式。具体代码如下：
+
+```vue
+<script setup>
+import { useNamespace } from "@ui-library/hooks";
+
+defineOptions({
+  name: "XButton",
+});
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: "default",
+  },
+  round: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const ns = useNamespace("button");
+</script>
+
+<template>
+  <button :class="[ns.block(), ns.modifier(type), ns.is('round', round)]">
+    <span>
+      <slot>button</slot>
+    </span>
+  </button>
+</template>
+```
+
+### 在 x-button.scss 添加圆角样式
+
+```scss
+.x-button {
+  // 省略其他样式
+  &.is-round {
+    border-radius: 100px;
+  }
+}
+```
+
+## 禁用按钮
+
+继续在 class 中添加代码`ns.is('disabled', disabled),`然后在 props 里面增加 disabled 这个参数，然后根据这个参数来设置不同的样式。还要设置一下 botton 按钮的禁用属性。具体代码如下：
+
+```vue
+<script setup>
+import { useNamespace } from "@ui-library/hooks";
+
+defineOptions({
+  name: "XButton",
+});
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: "default",
+  },
+  round: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const ns = useNamespace("button");
+</script>
+
+<template>
+  <button
+    :disabled="disabled"
+    :class="[
+      ns.block(),
+      ns.modifier(type),
+      ns.is('round', round),
+      ns.is('disabled', disabled),
+    ]"
+  >
+    <span>
+      <slot>button</slot>
+    </span>
+  </button>
+</template>
+```
+
+### 在 x-button.scss 添加禁用样式
+
+```scss
+.x-button {
+  // 省略其他样式
+
+  // 添加禁用样式
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: #e3e5f1;
+    }
+  }
+}
+```
+
+## 尺寸按钮
+
+在 x-button.vue 中增加一个 size 属性，然后根据这个属性来设置不同的样式。具体代码如下：
+
+```vue
+<script setup>
+import { useNamespace } from "@ui-library/hooks";
+
+defineOptions({
+  name: "XButton",
+});
+
+const props = defineProps({
+  //省略其他代码....
+
+  // 添加 size 属性
+  size: {
+    type: String,
+    default: "",
+  },
+});
+
+const ns = useNamespace("button");
+</script>
+
+<template>
+  <button
+    :disabled="disabled"
+    :class="[
+      // 省略其他代码....
+      ns.modifier('size', size),
+    ]"
+  >
+    <span>
+      <slot>button</slot>
+    </span>
+  </button>
+</template>
+```
+
+以上代码唯一的区别就是 modifier 方法的参数，我们在第二个参数上添加了值
+
+### 在 x-button.scss 添加不同尺寸样式
+
+```scss
+.x-button {
+  // 省略其他代码....
+  &-- {
+    // 省略其他代码....
+    &size {
+      &_ {
+        &small {
+          padding: 0 10px;
+          font-size: 12px;
+          height: 24px;
+          border-radius: 10px;
+        }
+
+        &large {
+          height: 40px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+```
+
+## icon 按钮
+
+这里我先用阿里 icon 图标库来做一个图标按钮，后面我回进一步封装 icon 组件。项目中如何使用阿里 icon 图标库我就不在这里赘述了相对简单大家可以自己去搜索一下，但是要注意的是 icon**图标库是加在 example 项目里面的，不需要在组件库中添加**。具体代码如下：
+
+```vue
+<script setup>
+import { useNamespace } from "@ui-library/hooks";
+
+defineOptions({
+  name: "XButton",
+});
+
+const props = defineProps({
+  //省略其他代码....
+
+  icon: {
+    type: String,
+    default: "",
+  },
+});
+
+const ns = useNamespace("button");
+</script>
+
+<template>
+  <button
+    :disabled="disabled"
+    :class="[
+      // 省略其他代码....
+    ]"
+  >
+    <i v-if="icon" class="x-icon iconfont" :class="icon"></i>
+    <span>
+      <slot>button</slot>
+    </span>
+  </button>
+</template>
+```
+
+以上代码很好理解，如果 icon 不为空，那么就显示 icon 图标，并且 icon 图标的 class 为 x-icon iconfont，然后根据 icon 的值来显示对应的图标。
+
+### 添加 icon 图标样式
+
+和 x-button.scss 同级创建一个 x-icon.scss，增加如下代码
+
+```scss
+// span标签左边距离icon标签的距离
+.x-icon + span {
+  margin-left: 5px;
+}
+```
+
+在 index.css 中引入 x-icon.scss
+
+```css
+@import "./x-icon.scss";
+```

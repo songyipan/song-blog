@@ -17,7 +17,7 @@ hero:
       text: 技术文档
       link: /post/RBAC_Auth
   image:
-    src: "/home-logo.jpg"
+    src: "/home-logo.svg"
 
 features:
   - title: 基础
