@@ -18,7 +18,16 @@ export default defineConfig({
       "/componentDocs/": [
         {
           text: "使用monorepo 构建组件库",
-          items: [],
+          items: [
+            {
+              text: "monorepo 构建组件库",
+              link: "/componentDocs/index",
+            },
+            {
+              text: "BEM规范",
+              link: "/componentDocs/bem",
+            },
+          ],
         },
       ],
       "/course/": [
